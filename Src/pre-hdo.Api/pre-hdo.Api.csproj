@@ -5,5 +5,13 @@
     <RootNamespace>pre_hdo.Api</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\pre-hdo.Core\pre-hdo.Core.csproj" />
+  </ItemGroup>
+
 
 </Project>

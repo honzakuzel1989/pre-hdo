@@ -16,4 +16,8 @@
     <PackageReference Include="HtmlAgilityPack" Version="1.11.30" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\pre-hdo.Core\pre-hdo.Core.csproj" />
+  </ItemGroup>
+
 </Project>

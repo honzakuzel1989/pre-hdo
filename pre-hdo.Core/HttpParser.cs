@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace prehdo.Console
 {
-    class HttpParser : IParser
+    public class HttpParser : IParser
     {
         private const int HTML_DAYS_TO_SKIP = 3;
 
@@ -26,7 +26,7 @@ namespace prehdo.Console
 
         private Date GetDate(HtmlNode date)
         {
-            var items = date.GetAttributeValue("value", string.Empty).Split('.', StringSplitOptions.RemoveEmptyEntries);
+            var items = date.GetAttributeValue("value", string.Empty).Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
             return new Date(int.Parse(items[0]), int.Parse(items[1]), int.Parse(items[2]));
         }
 
@@ -46,7 +46,7 @@ namespace prehdo.Console
 
                 // One more cycle
                 var range = ranges[i + 1].GetAttributeValue("title", string.Empty);
-                var times = range.Split('-', StringSplitOptions.RemoveEmptyEntries);
+                var times = range.Split(new[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
 
                 yield return new TimeRange(GetTime(times[0]), GetTime(times[1]), GetTarif(tarif));
             }
@@ -54,8 +54,8 @@ namespace prehdo.Console
 
         private Time GetTime(string timestr)
         {
-            var items = timestr.Split(':', StringSplitOptions.RemoveEmptyEntries);
-            
+            var items = timestr.Split(new[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
+
             int hours = int.Parse(items[0]);
             int minutes = int.Parse(items[1]);
 
@@ -64,12 +64,12 @@ namespace prehdo.Console
 
         private Tarif GetTarif(string tarif)
         {
-            return tarif switch
+            switch (tarif)
             {
-                "hdovt" => Tarif.VT,
-                "hdont" => Tarif.NT,
-                _ => Tarif.UNDEFINED,
-            };
+                case "hdovt": return Tarif.VT;
+                case "hdont": return Tarif.NT;
+                default: return Tarif.UNDEFINED;
+            }
         }
 
         private string ParseCommand()

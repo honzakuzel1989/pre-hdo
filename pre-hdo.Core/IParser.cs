@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace prehdo.Console
 {
-    internal interface IParser
+    public interface IParser
     {
         Task<Hdo> ParseAsync(string page);
     }
