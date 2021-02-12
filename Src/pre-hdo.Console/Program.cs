@@ -13,7 +13,7 @@ namespace prehdo.Console
 
         static async Task Main(string[] args)
         {
-            var period = int.TryParse(Environment.GetEnvironmentVariable("PRE-HDO-DOWNLOAD-PERIOD-MS"), out var dp)
+            var period = int.TryParse(Environment.GetEnvironmentVariable("PRE_HDO_DOWNLOAD_PERIOD_MS"), out var dp)
                 ? dp : DEFAULT_DOWNLOAD_PERIOD_MS;
 
             var downloader = new HttpDownloader();

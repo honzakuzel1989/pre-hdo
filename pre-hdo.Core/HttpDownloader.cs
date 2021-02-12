@@ -16,13 +16,13 @@ namespace prehdo.Console
 
         public async Task<string> DownloadAsync()
         {
-            var url = Environment.GetEnvironmentVariable("PRE-HDO-DOWNLOAD-URL")
+            var url = Environment.GetEnvironmentVariable("PRE_HDO_DOWNLOAD_URL")
                 ?? DEFAULT_DOWNLOAD_URL;
-            var urlparams = Environment.GetEnvironmentVariable("PRE-HDO-DOWNLOAD-URL-PARAMS")
+            var urlparams = Environment.GetEnvironmentVariable("PRE_HDO_DOWNLOAD_URL_PARAMS")
                 ?? DEFAULT_DOWNLOAD_URL_PARAMS;
-            var days = int.TryParse(Environment.GetEnvironmentVariable("PRE-HDO-DOWNLOAD-DAY-RANGE"), out var dr)
+            var days = int.TryParse(Environment.GetEnvironmentVariable("PRE_HDO_DOWNLOAD_DAY_RANGE"), out var dr)
                 ? dr : DEFAULT_DOWNLOAD_DAY_RANGE;
-            var command = int.TryParse(Environment.GetEnvironmentVariable("PRE-HDO-COMMAND"), out var cmd)
+            var command = int.TryParse(Environment.GetEnvironmentVariable("PRE_HDO_COMMAND"), out var cmd)
                 ? cmd : DEFAULT_COMMAND;
 
             // TODO: dt provider
