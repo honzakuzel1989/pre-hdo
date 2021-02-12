@@ -1,5 +1,6 @@
 ﻿using prehdo.Entities;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace prehdo
@@ -8,18 +9,16 @@ namespace prehdo
     {
         public Task VizualizeAsync(Hdo hdo)
         {
-            Console.WriteLine($"Staženo: {DateTime.Now}");
-            Console.WriteLine($"Povel přijímače: {hdo.Command}");
-            Console.WriteLine($"Od: {hdo.From}\tDo: {hdo.To}");
-            Console.WriteLine();
+            var timeLeftCnt = 20;
+            var headerCaptionLeftCnt = hdo.Days.Max(day => day.Times.Length) * timeLeftCnt;
+            var captionLeftCnt = headerCaptionLeftCnt - 4;
 
+            var header = $"{hdo.Command}, {hdo.From} - {hdo.To}, {DateTime.Now}";
+            Console.WriteLine($"{new string(' ', headerCaptionLeftCnt - header.Length)}{header}");
 
             foreach (var day in hdo.Days)
             {
-                var timeLeftCnt = 20;
-                var captionLeftCnt = day.Times.Length * timeLeftCnt - 4;
-
-                Console.Write($"{new string('*', 2)} {day.Caption} {new string('*', captionLeftCnt - day.Caption.Length)}");
+                Console.Write($"{new string('-', 2)} {day.Caption} {new string('-', captionLeftCnt - day.Caption.Length)}");
                 Console.WriteLine();
 
                 foreach (var time in day.Times)
