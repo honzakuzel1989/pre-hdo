@@ -5,6 +5,6 @@ namespace prehdo
 {
     internal interface IParser
     {
-        Task<HdoDto> ParseAsync(string page);
+        Task<Hdo> ParseAsync(string page);
     }
 }

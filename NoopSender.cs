@@ -5,7 +5,7 @@ namespace prehdo
 {
     class NoopSender : ISender
     {
-        public Task SendAsync(HdoDto hdo)
+        public Task SendAsync(Hdo hdo)
         {
             return Task.CompletedTask;
         }

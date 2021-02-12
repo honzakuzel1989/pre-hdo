@@ -5,6 +5,6 @@ namespace prehdo
 {
     public interface IVisualizer
     {
-        Task VizualizeAsync(HdoDto hdo);
+        Task VizualizeAsync(Hdo hdo);
     }
 }

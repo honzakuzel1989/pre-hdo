@@ -6,7 +6,7 @@ namespace prehdo
 {
     class ConsoleVisualizer : IVisualizer
     {
-        public Task VizualizeAsync(HdoDto hdo)
+        public Task VizualizeAsync(Hdo hdo)
         {
             Console.WriteLine($"Staženo: {DateTime.Now}");
             Console.WriteLine($"Povel přijímače: {hdo.Command}");

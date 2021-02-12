@@ -5,6 +5,6 @@ namespace prehdo
 {
     internal interface ISender
     {
-        Task SendAsync(HdoDto hdo);
+        Task SendAsync(Hdo hdo);
     }
 }

@@ -13,13 +13,13 @@ namespace prehdo
 
         private readonly HtmlDocument htmlDoc = new HtmlDocument();
 
-        public Task<HdoDto> ParseAsync(string page)
+        public Task<Hdo> ParseAsync(string page)
         {
             htmlDoc.LoadHtml(page);
 
             var dateFrom = htmlDoc.DocumentNode.SelectSingleNode(@"//*[@id=""hdo-url-od""]");
             var dateTo = htmlDoc.DocumentNode.SelectSingleNode(@"//*[@id=""hdo-url-do""]");
-            var result = new HdoDto(ParseCommand(), ParseDays().ToArray(), GetDate(dateFrom), GetDate(dateTo));
+            var result = new Hdo(ParseCommand(), ParseDays().ToArray(), GetDate(dateFrom), GetDate(dateTo));
 
             return Task.FromResult(result);
         }
