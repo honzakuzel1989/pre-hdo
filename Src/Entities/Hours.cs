@@ -1,4 +1,4 @@
-﻿namespace prehdo.Entities
+﻿namespace prehdo.Console.Entities
 {
     public class Hours
     {

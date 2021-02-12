@@ -1,9 +1,9 @@
-﻿using prehdo.Entities;
+﻿using prehdo.Console.Entities;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace prehdo
+namespace prehdo.Console
 {
     class ConsoleVisualizer : IVisualizer
     {
@@ -14,19 +14,19 @@ namespace prehdo
             var captionLeftCnt = headerCaptionLeftCnt - 4;
 
             var header = $"{hdo.Command}, {hdo.From} - {hdo.To}, {DateTime.Now}";
-            Console.WriteLine($"{new string(' ', headerCaptionLeftCnt - header.Length)}{header}");
+            System.Console.WriteLine($"{new string(' ', headerCaptionLeftCnt - header.Length)}{header}");
 
             foreach (var day in hdo.Days)
             {
-                Console.Write($"{new string('-', 2)} {day.Caption} {new string('-', captionLeftCnt - day.Caption.Length)}");
-                Console.WriteLine();
+                System.Console.Write($"{new string('-', 2)} {day.Caption} {new string('-', captionLeftCnt - day.Caption.Length)}");
+                System.Console.WriteLine();
 
                 foreach (var time in day.Times)
                 {
                     var strTime = time.ToString();
-                    Console.Write($"{new string(' ', timeLeftCnt - strTime.Length)}{strTime}");
+                    System.Console.Write($"{new string(' ', timeLeftCnt - strTime.Length)}{strTime}");
                 }
-                Console.WriteLine();
+                System.Console.WriteLine();
             }
 
             return Task.CompletedTask;

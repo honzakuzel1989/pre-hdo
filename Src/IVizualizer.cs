@@ -1,4 +1,4 @@
-﻿namespace prehdo
+﻿namespace prehdo.Console
 {
     internal interface IVizualizer
     {

@@ -1,11 +1,11 @@
 ﻿using HtmlAgilityPack;
-using prehdo.Entities;
+using prehdo.Console.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace prehdo
+namespace prehdo.Console
 {
     class HttpParser : IParser
     {

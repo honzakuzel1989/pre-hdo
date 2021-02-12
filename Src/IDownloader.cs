@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace prehdo
+namespace prehdo.Console
 {
     internal interface IDownloader
     {

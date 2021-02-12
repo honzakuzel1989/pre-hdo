@@ -1,7 +1,7 @@
-﻿using prehdo.Entities;
+﻿using prehdo.Console.Entities;
 using System.Threading.Tasks;
 
-namespace prehdo
+namespace prehdo.Console
 {
     internal interface ISender
     {

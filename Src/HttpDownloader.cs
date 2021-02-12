@@ -2,7 +2,7 @@
 using System.Net;
 using System.Threading.Tasks;
 
-namespace prehdo
+namespace prehdo.Console
 {
     class HttpDownloader : IDownloader, IDisposable
     {

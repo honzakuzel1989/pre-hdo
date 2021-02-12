@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace prehdo
+namespace prehdo.Console
 {
     internal class Program
     {
@@ -15,13 +15,13 @@ namespace prehdo
         {
             if (args.Length != 1)
             {
-                Console.Error.WriteLine("Usage: pre-hdo <command>");
+                System.Console.Error.WriteLine("Usage: pre-hdo <command>");
                 return;
             }
 
             if (!int.TryParse(args[0], out var command))
             {
-                Console.Error.WriteLine("Error: <command> must be a number");
+                System.Console.Error.WriteLine("Error: <command> must be a number");
                 return;
             }
 
@@ -47,7 +47,7 @@ namespace prehdo
                 }
                 catch (Exception ex)
                 {
-                    Console.Error.WriteLine(ex.Message);
+                    System.Console.Error.WriteLine(ex.Message);
                 }
 
                 

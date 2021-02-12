@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pre-hdo", "Src\pre-hdo.csproj", "{2C762E5B-B8E7-445E-AC82-7440499FCD1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pre-hdo.Console", "Src\pre-hdo.Console.csproj", "{2C762E5B-B8E7-445E-AC82-7440499FCD1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
