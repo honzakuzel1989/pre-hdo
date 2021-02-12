@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>pre_hdo.Api</RootNamespace>
+    <UserSecretsId>7a18d6cd-5c5b-4584-917c-d34eb6098941</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
