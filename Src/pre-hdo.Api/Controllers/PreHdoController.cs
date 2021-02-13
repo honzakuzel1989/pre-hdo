@@ -80,7 +80,7 @@ namespace pre_hdo.Api.Controllers
 
         private static string FormatTime(TimeRange tr)
         {
-            return $"{tr.Start.Hour}:{tr.Start.Minute} - {tr.End.Hour}:{tr.End.Minute} {tr.Tarif}";
+            return $"{tr.Start.Hour}:{tr.Start.Minute} - {tr.End.Hour}:{tr.End.Minute}\t{tr.Tarif}";
         }
     }
 }
