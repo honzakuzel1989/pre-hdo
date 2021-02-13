@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using prehdo.Console;
 using prehdo.Console.Entities;
+using prehdo.Core.Services;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,6 +27,12 @@ namespace pre_hdo.Api.Controllers
             _logger = logger;
             _downloader = downloader;
             _parser = parser;
+        }
+
+        [HttpGet]
+        public string Get()
+        {
+            return ";)";
         }
 
         [HttpGet("today")]

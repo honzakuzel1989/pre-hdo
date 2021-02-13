@@ -1,7 +1,7 @@
 ﻿using prehdo.Console.Entities;
 using System.Threading.Tasks;
 
-namespace prehdo.Console
+namespace prehdo.Core.Services
 {
     public interface IParser
     {

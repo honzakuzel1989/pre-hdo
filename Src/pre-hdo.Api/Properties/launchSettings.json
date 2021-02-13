@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "prehdo/today",
+      "launchUrl": "prehdo",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +20,7 @@
     "pre_hdo.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "prehdo/today",
+      "launchUrl": "prehdo",
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

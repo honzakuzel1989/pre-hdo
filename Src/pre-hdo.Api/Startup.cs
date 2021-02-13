@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using prehdo.Console;
+using prehdo.Core.Services;
 
 namespace pre_hdo.Api
 {

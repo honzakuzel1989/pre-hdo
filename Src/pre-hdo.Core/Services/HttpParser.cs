@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace prehdo.Console
+namespace prehdo.Core.Services
 {
     public class HttpParser : IParser
     {
