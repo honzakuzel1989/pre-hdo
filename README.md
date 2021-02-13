@@ -31,6 +31,6 @@ GET <url>/prehdo/timetable - get HDO times for future (max 14 days by configurat
 ## Configuration
 ```
 PRE_HDO_DOWNLOAD_PERIOD_MS - HTML download period from provider URL, default 1000 * 60 * 60
-PRE_HDO_DOWNLOAD_DAY_RANGE - number of another days to download, max 13 (14 with current day), default 10, 0 for current day only
+PRE_HDO_DOWNLOAD_DAY_RANGE - number of another days to download, max 13 (14 with current day), default 10
 PRE_HDO_COMMAND - HDO command, default 492
 ```
