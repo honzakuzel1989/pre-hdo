@@ -1,4 +1,5 @@
 ﻿using HtmlAgilityPack;
+using pre_hdo.Core.Entities;
 using prehdo.Console.Entities;
 using System;
 using System.Collections.Generic;
@@ -59,7 +60,7 @@ namespace prehdo.Console
             int hours = int.Parse(items[0]);
             int minutes = int.Parse(items[1]);
 
-            return new Time(new Hours(hours), new Minutes(minutes));
+            return new Time(new Hour(hours), new Minute(minutes));
         }
 
         private Tarif GetTarif(string tarif)
@@ -72,11 +73,15 @@ namespace prehdo.Console
             }
         }
 
-        private string ParseCommand()
+        private Command ParseCommand()
         {
-            return htmlDoc.DocumentNode
+            var cmdstr = htmlDoc.DocumentNode
                 .SelectSingleNode(@"//*[@id=""povel""]/option[@selected=""selected""]")
                 .InnerText;
+
+            var items = cmdstr.Split(new[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
+
+            return new Command(int.Parse(items[0]), items[1]);
         }
     }
 }

@@ -2,18 +2,18 @@
 {
     public class Time
     {
-        public Time(Hours hours, Minutes minutes)
+        public Time(Hour hours, Minute minutes)
         {
-            Hours = hours;
-            Minutes = minutes;
+            Hour = hours;
+            Minute = minutes;
         }
 
-        public Hours Hours { get; }
-        public Minutes Minutes { get; }
+        public Hour Hour { get; }
+        public Minute Minute { get; }
 
         public override string ToString()
         {
-            return $"{Hours}:{Minutes}";
+            return $"{Hour}:{Minute}";
         }
     }
 }

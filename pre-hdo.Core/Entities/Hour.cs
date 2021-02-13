@@ -1,8 +1,8 @@
 ﻿namespace prehdo.Console.Entities
 {
-    public class Minutes
+    public class Hour
     {
-        public Minutes(int value)
+        public Hour(int value)
         {
             Value = value;
         }
@@ -12,6 +12,11 @@
         public override string ToString()
         {
             return Value.ToString("00");
+        }
+
+        public static implicit operator int(Hour h)
+        {
+            return h.Value;
         }
     }
 }

@@ -1,8 +1,10 @@
-﻿namespace prehdo.Console.Entities
+﻿using pre_hdo.Core.Entities;
+
+namespace prehdo.Console.Entities
 {
     public class Hdo
     {
-        public Hdo(string command, Day[] days, Date from, Date to)
+        public Hdo(Command command, Day[] days, Date from, Date to)
         {
             Command = command;
             Days = days;
@@ -10,9 +12,14 @@
             To = to;
         }
 
-        public string Command { get; }
+        public Command Command { get; }
         public Day[] Days { get; }
         public Date From { get; }
         public Date To { get; }
+
+        public override string ToString()
+        {
+            return $"{Command.Number} - {Command.Name}";
+        }
     }
 }
