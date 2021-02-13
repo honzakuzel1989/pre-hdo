@@ -41,6 +41,7 @@ namespace pre_hdo.Api.Controllers
 
             return new JsonResult(new
             {
+                Timestamp = DateTime.Now.ToString(),
                 Title = $"{result.Command} {day.Caption}",
                 Times = day.Times.Select(FormatTime),
                 IsNt = day.Times.Any(IsNt)
@@ -69,6 +70,7 @@ namespace pre_hdo.Api.Controllers
 
             return new JsonResult(new
             {
+                Timestamp = DateTime.Now.ToString(),
                 Title = $"{result.Command.Number}, {result.From.Day}.{result.From.Month} - {result.To.Day}.{result.To.Month}",
                 Days = result.Days.Select(day => new
                 {
