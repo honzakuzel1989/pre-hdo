@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\pre-hdo.Core\pre-hdo.Core.csproj" />
+    <ProjectReference Include="..\pre-hdo.Core\pre-hdo.Core.csproj" />
   </ItemGroup>
 
 </Project>
