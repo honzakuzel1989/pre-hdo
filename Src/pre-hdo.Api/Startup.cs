@@ -33,6 +33,8 @@ namespace pre_hdo.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
             app.UseRouting();
 
             app.UseAuthorization();

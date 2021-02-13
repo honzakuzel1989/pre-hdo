@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using prehdo.Console;
+using System;
 using System.Threading.Tasks;
 
 namespace pre_hdo.Api.Controllers
@@ -25,8 +26,8 @@ namespace pre_hdo.Api.Controllers
             _parser = parser;
         }
 
-        [HttpGet]
-        public async Task<string> GetHdoTimetable()
+        [HttpGet()]
+        public async Task<JsonResult> GetHdoTimetable()
         {
             _logger.LogInformation($"Getting HDO timetable...");
 
@@ -35,7 +36,7 @@ namespace pre_hdo.Api.Controllers
 
             _logger.LogInformation($"Return result for {result.Command} from {result.From} to {result.To}");
 
-            return JsonConvert.SerializeObject(result);
+            return new JsonResult(result);
         }
     }
 }
