@@ -61,7 +61,7 @@ namespace pre_hdo.Api.Controllers
             var dd = await _downloader.DownloadAsync();
             var result = await _parser.ParseAsync(dd);
             var day = result.Days.First();
-            var isnt = day.Times.Any(IsNt);
+            var current = day.Times.First(Current);
 
             _logger.LogInformation($"Return result for '{result.Command}' for '{day.Caption}'");
 
@@ -70,20 +70,19 @@ namespace pre_hdo.Api.Controllers
                 Timestamp = DateTime.Now.ToString(),
                 Title = $"{result.Command} {day.Caption}",
                 Times = day.Times.Where(t => tarifs.Contains(t.Tarif)).Select(FormatTime),
-                Tarif = isnt ? Tarif.NT.ToString() : Tarif.VT.ToString(),
-                IsNt = isnt,
+                Current = FormatTime(current),
                 Command = result.Command.ToString(),
             });
         }
 
-        private static bool IsNt(TimeRange tr)
+        private static bool Current(TimeRange tr)
         {
             var now = DateTime.Now;
 
             var start = new DateTime(now.Year, now.Month, now.Day, tr.Start.Hour, tr.Start.Minute, 0);
             var end = new DateTime(now.Year, now.Month, now.Day, tr.End.Hour, tr.End.Minute, 0);
 
-            return tr.Tarif == Tarif.NT && now >= start && now <= end;
+            return now >= start && now <= end;
         }
 
         [HttpGet("timetable")]
@@ -110,7 +109,7 @@ namespace pre_hdo.Api.Controllers
 
         private static string FormatTime(TimeRange tr)
         {
-            return $"{tr.Start.Hour}:{tr.Start.Minute} - {tr.End.Hour}:{tr.End.Minute}\t{tr.Tarif}";
+            return $"{tr.Start.Hour}:{tr.Start.Minute} - {tr.End.Hour}:{tr.End.Minute}  {tr.Tarif}";
         }
     }
 }

@@ -15,7 +15,7 @@
 
         public override string ToString()
         {
-            return Tarif == Tarif.NT ? $"[{Start} - {End}]" : $"{Start} - {End}";
+            return $"{Start} - {End}";
         }
     }
 }
