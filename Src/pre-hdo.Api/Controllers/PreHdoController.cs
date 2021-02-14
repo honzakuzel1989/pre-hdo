@@ -39,10 +39,29 @@ namespace pre_hdo.Api.Controllers
         public async Task<JsonResult> GetToday()
         {
             _logger.LogInformation($"Getting HDO today...");
+            return await GetTodayByTarig(Tarif.NT, Tarif.VT);
+        }
 
+        [HttpGet("today/nt")]
+        public async Task<JsonResult> GetTodayNt()
+        {
+            _logger.LogInformation($"Getting HDO NT today...");
+            return await GetTodayByTarig(Tarif.NT);
+        }
+
+        [HttpGet("today/vt")]
+        public async Task<JsonResult> GetTodayVt()
+        {
+            _logger.LogInformation($"Getting HDO VT today...");
+            return await GetTodayByTarig(Tarif.VT);
+        }
+
+        private async Task<JsonResult> GetTodayByTarig(params Tarif[] tarifs)
+        {
             var dd = await _downloader.DownloadAsync();
             var result = await _parser.ParseAsync(dd);
             var day = result.Days.First();
+            var isnt = day.Times.Any(IsNt);
 
             _logger.LogInformation($"Return result for '{result.Command}' for '{day.Caption}'");
 
@@ -50,8 +69,10 @@ namespace pre_hdo.Api.Controllers
             {
                 Timestamp = DateTime.Now.ToString(),
                 Title = $"{result.Command} {day.Caption}",
-                Times = day.Times.Select(FormatTime),
-                IsNt = day.Times.Any(IsNt)
+                Times = day.Times.Where(t => tarifs.Contains(t.Tarif)).Select(FormatTime),
+                Tarif = isnt ? Tarif.NT.ToString() : Tarif.VT.ToString(),
+                IsNt = isnt,
+                Command = result.Command.ToString(),
             });
         }
 
