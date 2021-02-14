@@ -16,10 +16,5 @@ namespace prehdo.Console.Entities
         public Day[] Days { get; }
         public Date From { get; }
         public Date To { get; }
-
-        public override string ToString()
-        {
-            return $"{Command.Number} - {Command.Name}";
-        }
     }
 }
