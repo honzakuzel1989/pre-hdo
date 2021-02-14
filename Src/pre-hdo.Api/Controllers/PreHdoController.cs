@@ -61,7 +61,7 @@ namespace pre_hdo.Api.Controllers
             var dd = await _downloader.DownloadAsync();
             var result = await _parser.ParseAsync(dd);
             var day = result.Days.First();
-            var current = day.Times.First(Current);
+            var current = day.Times.FirstOrDefault(Current) ?? day.Times.Last();
 
             _logger.LogInformation($"Return result for '{result.Command}' for '{day.Caption}'");
 
