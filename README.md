@@ -1,7 +1,7 @@
 # pre-hdo
 Small tool for download HDO status for PRE
 
-## WEB API (recomended)
+## Api (recomended)
 ```
 GET <url>/prehdo/today - get HDO times for current day
 GET <url>/prehdo/timetable - get HDO times for future (max 14 days by configuration)
