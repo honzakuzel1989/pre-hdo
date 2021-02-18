@@ -72,6 +72,7 @@ namespace pre_hdo.Api.Controllers
                 Times = day.Times.Where(t => tarifs.Contains(t.Tarif)).Select(FormatTime),
                 Current = FormatTime(current),
                 Command = result.Command.ToString(),
+                IsNT = current.Tarif == Tarif.NT,
             });
         }
 
